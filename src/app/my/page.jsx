@@ -27,16 +27,11 @@ async function Page() {
     return (
       <div className=" w-1/2 rounded-lg mx-auto p-2 flex flex-col gap-3 justify-center items-center bg-white shadow-lg shadow-gray-400">
         {allMounth.map((item, i) => {
-          return <>
-            <Link key={item['id']} href={`/all?id=${item['id']}&&name=${item['name']}`} className="w-full">
-              <div className=" flex justify-center items-center w-full h-12 rounded-md shadow-lg text-white font-extrabold text-xl bg-slate-300 hover:bg-teal-400">january 2023</div>
-            </Link>
-          </>
+          return (<Link key={item['id']} href={`/all?id=${item['id']}&&name=${item['name']}`} className="w-full">
+            <div className=" flex justify-center items-center w-full h-12 rounded-md shadow-lg text-white font-extrabold text-xl bg-slate-300 hover:bg-teal-400">january 2023</div>
+          </Link>
+          )
         })}
-
-        <Link href='#' className="w-full">
-          <div className=" flex justify-center items-center w-full h-12 rounded-md shadow-lg text-white font-extrabold text-xl bg-slate-300 hover:bg-teal-400">january 2023</div>
-        </Link>
       </div>
     )
   } else {

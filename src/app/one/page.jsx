@@ -19,7 +19,7 @@ import { cookies } from "next/headers";
 //     }
 // };
 
-export async function page({ searchParams }) {
+export async function page({ }) {
     // const id = searchParams['id']
     // const cookie = cookies().get('token')
     // const data = await getData()
