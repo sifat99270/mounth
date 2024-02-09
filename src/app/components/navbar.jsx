@@ -46,12 +46,12 @@ const Navbar = () => {
             </li>
           </Link>
         </ul>
-        {auth ? <Link
+        {auth ? <Profile /> : <Link
           href="/login"
           className=" bg-green-300 h-5/6 text-center w-28 font-bold rounded-lg shadow-md text-red-300 flex justify-center items-center"
         >
           login
-        </Link> : <Profile />}
+        </Link>}
       </div>
     </div>
   );

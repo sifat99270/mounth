@@ -7,13 +7,13 @@ export async function POST(req, res) {
   try {
     const json = await req.json();
     const prisma = new PrismaClient();
-
     const check = await prisma.user.findUnique({
       where: {
         email: json["email"],
         password: json["password"],
       },
     });
+    console.log(check, 'ok')
     if (check["id"]) {
       const token = await createToken(check["id"], json["email"]);
       //let expireDuration = new Date(Date.now() + 24 * 60 * 60 * 1000);

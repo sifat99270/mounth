@@ -25,9 +25,10 @@ const Login = () => {
       body: JSON.stringify(inputObj),
       headers: {
         "Content-Type": "application/json",
-      },
+      }, cache: "no-store"
     });
     const result = await send.json();
+    console.log(result);
     if (result["status"] === "success") {
       success("successfully login");
       router.push("/");
