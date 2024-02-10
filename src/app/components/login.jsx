@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { success, error } from "@/utilities/tosthandler";
 import { useRouter } from "next/navigation";
 import Fetchani from "@/utilities/fetchani";
+import Link from "next/link";
 const Login = () => {
   const [inputObj, setInputObj] = useState({
     email: "",
@@ -38,7 +39,7 @@ const Login = () => {
     setFetch(false)
   }
   return (
-    <div className="w-80 shadow-md  bg-zinc-300 rounded-lg flex flex-col ml-auto justify-center items-center  mr-auto mt-10">
+    <div className=" relative w-80 shadow-md  bg-zinc-300 rounded-lg flex flex-col ml-auto justify-center items-center  mr-auto mt-10">
       <p className="font-bold  p-4">Login your Account</p>
       <div className="flex flex-col gap-2 justify-center items-center  ">
         <input
@@ -65,6 +66,8 @@ const Login = () => {
         >
           submit
         </button>}
+        <Link className=" absolute bottom-2 right-3 bg-teal-400 p-1 rounded-md font-medium " href='/sign'>SIGN IN</Link>
+
       </div>
     </div>
   );

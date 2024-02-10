@@ -2,24 +2,25 @@ import Link from "next/link";
 import My from "../components/my";
 import { cookies } from "next/headers";
 
-async function getData(token) {
-  if (token) {
-    const res = await fetch(`${process.env.HOST}/api/alls/mount`, {
-      method: "POST", headers: {
-        [token['name']]: JSON.stringify(token)
-      }
-    }, { cache: 'no-store' });
-    const result = await res.json()
-    return result['data'];
-  } else {
-    return {
-      data: []
-    }
-  }
-
-}
 
 async function Page() {
+  async function getData(token) {
+    if (token) {
+      const res = await fetch(`${process.env.HOST}/api/alls/mount`, {
+        method: "POST", headers: {
+          [token['name']]: JSON.stringify(token)
+        }
+      }, { cache: 'no-store' });
+      const result = await res.json()
+      return result['data'];
+    } else {
+      return {
+        data: []
+      }
+    }
+
+  }
+
   const cookie = cookies().get('token');
   const allMounth = await getData(cookie);
 

@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 const Navbar = () => {
   const [auth, setAuth] = useState(false)
+  console.log(auth)
   useEffect(() => {
     if (Cookies.get('token')) {
       setAuth(true)

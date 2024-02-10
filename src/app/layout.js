@@ -4,6 +4,7 @@ import Navbar from './components/navbar'
 import { Toaster } from 'react-hot-toast'
 import NextTopLoader from 'nextjs-toploader';
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import Fetchani from '@/utilities/fetchani';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
        <div className=' mt-4'>
        {children} 
        </div>
+       
         </body>
     </html>
   )

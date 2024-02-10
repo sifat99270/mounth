@@ -2,7 +2,9 @@ import { cookies } from "next/headers";
 import My from "../components/my";
 async function person(token, mounthId) {
     const res = await fetch(`${process.env.HOST}/api/alls/my?mounthId=${mounthId}`, {
-        method: "GET", headers: {
+        method: "GET",
+        credentials: 'include',
+        headers: {
             [token['name']]: JSON.stringify(token)
         }
     }, { cache: 'no-store' });

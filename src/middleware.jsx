@@ -3,6 +3,8 @@ import { VerifyToken } from "./utilities/token";
 
 export async function middleware(req, res) {
   const path = req.nextUrl.pathname;
+  // console.log(path);
+  // console.log(req.cookies);
   try {
     const token = req.cookies.get("token");
     if (token) {

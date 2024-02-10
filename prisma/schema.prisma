@@ -35,7 +35,7 @@ model user{
 
 model mounth{
   id Int @id @default(autoincrement())
-  name String @unique
+  name String 
   userId Int
   user user @relation(fields: [userId],references: [id], onDelete: Restrict,onUpdate: Cascade)
   person person[]
@@ -45,7 +45,7 @@ model mounth{
 
 model person{
   id Int @id @default(autoincrement())
-  name String @unique
+  name String 
   hazira String @db.VarChar(5)
   rate String @db.VarChar(4)
   mot String @db.VarChar(10)

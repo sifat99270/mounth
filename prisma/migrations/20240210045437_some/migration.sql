@@ -62,12 +62,6 @@ CREATE UNIQUE INDEX "check_email_key" ON "check"("email");
 -- CreateIndex
 CREATE UNIQUE INDEX "user_email_key" ON "user"("email");
 
--- CreateIndex
-CREATE UNIQUE INDEX "mounth_name_key" ON "mounth"("name");
-
--- CreateIndex
-CREATE UNIQUE INDEX "person_name_key" ON "person"("name");
-
 -- AddForeignKey
 ALTER TABLE "mounth" ADD CONSTRAINT "mounth_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 

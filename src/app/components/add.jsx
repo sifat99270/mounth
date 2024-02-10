@@ -89,7 +89,6 @@ const Add = ({ mounthName }) => {
     }
     setfetch(false);
   }
-
   function nameSet(item) {
     setMounthId(item['id'])
     setName(item['name']);

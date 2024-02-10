@@ -13,7 +13,6 @@ export async function POST(req, res) {
         password: json["password"],
       },
     });
-    console.log(check, 'ok')
     if (check["id"]) {
       const token = await createToken(check["id"], json["email"]);
       //let expireDuration = new Date(Date.now() + 24 * 60 * 60 * 1000);
@@ -22,14 +21,22 @@ export async function POST(req, res) {
         status: "success",
         data: "successfully login",
       });
-
-      response.cookies.set({
+      cookies().set('token', token, {
         name: "token",
         value: token,
         httpOnly: true,
         maxAge: 60 * 60 * 24,
-        path: "/",
-      });
+        sameSite: "strict",
+        path: "/"
+      })
+      // response.cookies.set({
+      //   name: "token",
+      //   value: token,
+      //   httpOnly: true,
+      //   maxAge: 60 * 60 * 24,
+      //   sameSite: "strict",
+      //   path: "/",
+      // });
       return response;
     } else {
       return NextResponse.json({
